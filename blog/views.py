@@ -43,6 +43,7 @@ def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post)
     serialized_comments = []
+
     for comment in comments:
         serialized_comments.append({
             'text': comment.text,
@@ -55,6 +56,7 @@ def post_detail(request, slug):
         "text": post.text,
         "author": post.author.username,
         "comments": serialized_comments,
+        "comments_amount": len(serialized_comments),
         'likes_amount': post.likes.count(),
         "image_url": post.image.url if post.image else None,
         "published_at": post.published_at,
