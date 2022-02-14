@@ -72,7 +72,7 @@
                   {% else %}
                     <img class="card-img rounded-0" src="../static/img/banner/blog.png" alt="">
                   {% endif %}
-                
+
                 </div>
                 <div class="blog__slide__content">
                   <h3><a href={{ post.slug }}>{{ post.title }}</a></h3>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="details mt-20">
                   <h3>{{ post.title }}</h3>
-                  <p>{{ post.text }}</p>
+                  <p>{{ post.text|truncatechars:200 }}</p>
                   <a class="button" href={{ post.slug }}>Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
