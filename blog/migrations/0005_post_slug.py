@@ -6,14 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0004_auto_20190910_1928'),
+        ("blog", "0004_auto_20190910_1928"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='slug',
-            field=models.CharField(default='', max_length=200, verbose_name='Название поста в виде url'),
+            model_name="post",
+            name="slug",
+            field=models.CharField(
+                default="", max_length=200, verbose_name="Название поста в виде url"
+            ),
             preserve_default=False,
         ),
     ]
